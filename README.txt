@@ -1,36 +1,45 @@
-Blood Bank Management System (Python + Flask)
+# 🩸 Blood Bank Management System
 
-👨‍💻 Built By: shebin k babu (darkloverboi)
+A full-stack web application built using **Python and Flask** to manage blood donors, blood requests, and administrative operations efficiently.
 
-live demo : https://blood-bank-system-ben.onrender.com/
+🔗 **Live Demo:**  
+https://blood-bank-system-ben.onrender.com/
 
-📝 Features:
-- Donor Registration
-- Blood Request Form
-- Admin Login
-- Admin Dashboard
-- View All Donors
-- View All Blood Requests
-- Blood Inventory Summary
-- Blood Group Search & Delete Donors
+---
 
-📁 Tech Stack:
-- Python 3.12
-- Flask Framework
-- SQLite Database
-- HTML, CSS (Vanilla)
+## 📌 Project Overview
 
-🚀 How to Run:
-1. Install Flask:
-   pip install flask
+The Blood Bank Management System is designed to streamline donor registration, blood inventory management, and request handling through a secure admin dashboard.
 
-2. Run the app:
-   python app.py
+This project demonstrates backend development, database handling, authentication implementation, and CRUD operations using Flask and SQLite.
 
-3. Access in browser:
-   http://127.0.0.1:5000/
+---
 
-🔐 Admin Login:
-Username: admin
-Password: password
+## 🚀 Features
 
+- ✅ Donor Registration System  
+- ✅ Blood Request Submission  
+- ✅ Secure Admin Login  
+- ✅ Admin Dashboard  
+- ✅ View All Registered Donors  
+- ✅ View All Blood Requests  
+- ✅ Blood Inventory Summary  
+- ✅ Search Donors by Blood Group  
+- ✅ Delete Donor Records  
+
+---
+
+## 🛠 Tech Stack
+
+- **Backend:** Python 3.12, Flask  
+- **Database:** SQLite  
+- **Frontend:** HTML5, CSS3 (Vanilla)  
+- **Deployment:** Render  
+
+---
+
+## ⚙️ How to Run Locally
+
+### 1️⃣ Install Dependencies
+```bash
+pip install flask
