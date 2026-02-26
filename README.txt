@@ -221,3 +221,10 @@ This project is for educational and portfolio purposes.
 ## ⭐ Support
 
 If you like this project, consider giving it a ⭐ on GitHub!
+
+🌐 Connect With Me
+this is my official GitHub. 
+email.kshebin86@gmail.com 
+Linkedin : https://www.linkedin.com/in/shebink1/ 
+My portfolio : https://darkloverboi.space 
+Follow for cybersecurity and AI project updates.
