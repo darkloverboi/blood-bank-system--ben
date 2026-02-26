@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Donors</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            color: #d32f2f;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        select, button {
+            padding: 8px 12px;
+            margin-right: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #d32f2f;
+            color: white;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        .map-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+        }
+
+        .delete-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔍 Blood Group Filter -->
+    <form method="GET" action="/donors">
+        <label for="group">Search by Blood Group:</label>
+        <select name="group" required>
+            <option value="">Select</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Registered Donors</h2>
+
+    {% if donors %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Blood Group</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Delete</th>
+        </tr>
+        {% for d in donors %}
+        <tr>
+            <td>{{ d[1] }}</td>
+            <td>{{ d[2] }}</td>
+            <td>{{ d[3] }}</td>
+            <td>{{ d[4] }}</td>
+            <td>{{ d[5] }}</td>
+            <td>
+                <a href="https://www.google.com/maps/search/{{ d[6] | urlencode }}" target="_blank">
+                    <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Map" class="map-icon" />
+                    {{ d[6] }}
+                </a>
+            </td>
+            <td>
+                <form method="POST" action="/admin/delete_donor/{{ d[0] }}">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No donors found for this blood group.</p>
+    {% endif %}
+
+</body>
+</html>

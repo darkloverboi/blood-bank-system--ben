@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blood Bank</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        nav .btn-login {
+            background-color: red;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav .btn-login:hover {
+            background-color: #b71c1c;
+        }
+
+        .hero {
+            background-color: #d23625;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero .buttons a {
+            background: white;
+            color: red;
+            padding: 12px 20px;
+            border-radius: 6px;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .hero .buttons a:hover {
+            background: #fff0f0;
+            transform: scale(1.05);
+        }
+
+        .stats {
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 10px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .stats div {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px;
+            transition: transform 0.3s;
+        }
+
+        .stats div:hover {
+            transform: scale(1.1);
+            color: #d32f2f;
+        }
+
+        .why-choose {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 220px;
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .card:hover {
+            background: #ffecec;
+            transform: translateY(-5px);
+        }
+
+        .cta-emergency {
+            background: red;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta-emergency a {
+            background: white;
+            color: red;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .cta-emergency a:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-join {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta-join a {
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .cta-join a:hover {
+            background-color: #b71c1c;
+        }
+
+        footer {
+            background: #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+
+        footer div {
+            margin: 5px;
+        }
+
+        footer .bottom {
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .stats { flex-direction: column; align-items: center; }
+            .cards { flex-direction: column; align-items: center; }
+        }
+
+        @media (max-width: 480px) {
+            nav a { display: block; margin: 8px 0; }
+            nav { text-align: center; }
+            header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">❤️ Blood Bank</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/register">Register Donor</a>
+            <a href="/admin/inventory">Blood Availability</a>
+            <a href="/request">Request Blood</a>
+            <a href="/admin/login" class="btn-login">Admin Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Save Lives Through Blood Donation</h1>
+        <p>Connect donors with patients in need. Every drop counts in our mission to save lives through efficient blood bank management.</p>
+        <div class="buttons">
+            <a href="/register">Become a Donor</a>
+            <a href="/request">Request Blood</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div>10,000+ Lives Saved</div>
+        <div>5,000+ Registered Donors</div>
+        <div>24/7 Available Service</div>
+        <div>99% Success Rate</div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose Our Blood Bank?</h2>
+        <div class="cards">
+            <div class="card">
+                <h4>📝 Easy Donor Registration</h4>
+                <p>Quick and simple process to become a donor.</p>
+            </div>
+            <div class="card">
+                <h4>📊 Real-time Blood Inventory</h4>
+                <p>Up-to-date blood group availability anytime.</p>
+            </div>
+            <div class="card">
+                <h4>🚑 Emergency Requests</h4>
+                <p>Prioritized response for critical blood needs.</p>
+            </div>
+            <div class="card">
+                <h4>👨‍⚕️ Professional Management</h4>
+                <p>Secure and accurate donor & request records.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-emergency">
+        <h2>Need Blood in Emergency?</h2>
+        <p>Our 24/7 emergency blood service ensures rapid response for critical situations. Don’t wait – every second counts.</p>
+        <a href="/request">Request Blood Now</a>
+        <a href="/admin/inventory">Check Availability</a>
+    </section>
+
+    <section class="cta-join">
+        <h2>Join Our Life-Saving Mission</h2>
+        <p>Every donor makes a difference. Register today and become part of a community saving lives.</p>
+        <a href="/register">Register a Donor Today</a>
+    </section>
+
+    <footer>
+        <div>
+            <strong>Blood Bank:</strong><br>
+            A simple and secure system to save lives.
+        </div>
+        <div>
+            <strong>Quick Links</strong><br>
+            <a href="/">Home</a><br>
+            <a href="/register">Register Donor</a><br>
+            <a href="/request">Blood Request</a>
+        </div>
+        <div>
+            <strong>Emergency Contact</strong><br>
+            📞 1-800-BLOOD-HELP
+        </div>
+        <div class="bottom">
+            © 2025 Blood Bank Management System. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
