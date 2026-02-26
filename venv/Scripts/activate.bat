@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\iamsh\OneDrive\Desktop\blood bank managment\venv"
+set "VIRTUAL_ENV=D:\cyber security\blood\blood-bank-system--ben\venv"
 
 if not defined PROMPT set PROMPT=$P$G
 
