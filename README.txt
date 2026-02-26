@@ -9,7 +9,7 @@ https://blood-bank-system-ben.onrender.com/
 ## 📸 Application Screenshot
 
 ![Blood Bank System](home-dashboard.png)
-
+https://github.com/darkloverboi/blood-bank-system--ben/blob/ef9f2c74dcc0baeba02c649e86031a6f4d7a643e/home-dashboard.png
 
 ---
 
