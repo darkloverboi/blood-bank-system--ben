@@ -6,6 +6,11 @@ A full-stack web application built using **Python and Flask** to manage blood do
 https://blood-bank-system-ben.onrender.com/
 
 ---
+## 📸 Application Screenshot
+
+![Blood Bank System](home-dashboard.png)
+
+---
 
 ## 📌 Project Overview
 
